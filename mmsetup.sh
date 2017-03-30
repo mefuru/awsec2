@@ -10,8 +10,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | b
 
 # Load nvm and install latest production node
 source $HOME/.nvm/nvm.sh
-nvm install v0.12.6
 nvm install v6.0.0
+nvm install v0.12.6
 nvm install v7.8.0
 nvm use v6.0.0
 
@@ -23,7 +23,7 @@ sudo apt install -y rlwrap
 # http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux#Emacs_25
 sudo apt-add-repository -y ppa:adrozdoff/emacs
 sudo apt update
-sudo apt install emacs25
+sudo apt install -y emacs25
 
 # Install Prelude for emacs24
 # http://batsov.com/prelude/      
@@ -34,8 +34,8 @@ curl -L http://git.io/epre | sh
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-sudo apt-get update
-sudo apt-get install -y mongodb-org
+sudo apt-get -y update
+udo apt-get -y install -y mongodb-org
 sudo mkdir -p /data/db/
 sudo chown `id -u` /data/db
 
@@ -47,9 +47,9 @@ wget http://download.redis.io/redis-stable.tar.gz
 tar xvzf redis-stable.tar.gz
 cd redis-stable
 sudo apt-get -y install make
-sudo apt-get install build-essential
+sudo apt-get -y install build-essential
 make
-sudo apt install redis-server
+sudo apt install -y redis-server
 
 # git pull and install dotfiles as well
 cd $HOME
