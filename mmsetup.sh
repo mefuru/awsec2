@@ -10,10 +10,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | b
 
 # Load nvm and install latest production node
 source $HOME/.nvm/nvm.sh
+nvm install v7.8.0
 nvm install v6.0.0
 nvm install v0.12.6
-nvm install v7.8.0
-nvm use v6.0.0
+nvm use v7.8.0
 
 # Node.js REPL
 # https://linux.die.net/man/1/rlwrap
@@ -38,9 +38,6 @@ sudo apt-get -y update
 sudo apt-get -y install -y mongodb-org
 sudo mkdir -p /data/db/
 sudo chown `id -u` /data/db
-
-# Generate ssh on server
-ssh-keygen
 
 # REDIS - http://redis.io/topics/quickstart
 wget http://download.redis.io/redis-stable.tar.gz
@@ -76,5 +73,6 @@ sudo timedatectl set-timezone Europe/London
 sudo apt -y install node-gyp
 node-gyp rebuild
 
-# cat key to use w/ bitbucket etc
+# Generate ssh on server
+ssh-keygen -f $HOME/.ssh/id_rsa -t rsa -N ''
 cat ~/.ssh/id_rsa.pub
