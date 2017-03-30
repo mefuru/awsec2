@@ -35,12 +35,12 @@ curl -L http://git.io/epre | sh
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 sudo apt-get -y update
-udo apt-get -y install -y mongodb-org
+sudo apt-get -y install -y mongodb-org
 sudo mkdir -p /data/db/
 sudo chown `id -u` /data/db
 
 # Generate ssh on server
-ssh-keygen && cat ~/.ssh/id_rsa.pub
+ssh-keygen
 
 # REDIS - http://redis.io/topics/quickstart
 wget http://download.redis.io/redis-stable.tar.gz
@@ -75,3 +75,6 @@ sudo timedatectl set-timezone Europe/London
 # node-gyp is a cross-platform command-line tool written in Node.js for compiling native addon modules for Node.js
 sudo apt -y install node-gyp
 node-gyp rebuild
+
+# cat key to use w/ bitbucket etc
+cat ~/.ssh/id_rsa.pub
